@@ -19,4 +19,6 @@
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *sbMenu;
 
+-(IBAction) login: (id) sender;
+
 @end
