@@ -8,6 +8,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "ASINetworkQueue.h"
+#import "JSON.h"
 #import "HallenprojektStatusAppDelegate.h"
 
 @implementation HallenprojektStatusAppDelegate
@@ -47,6 +48,7 @@
 	NSURL *url = [NSURL URLWithString:@"http://localhost:3000/set_current_place"];
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
 	[request setPostValue:@"1" forKey:@"current_place_id"];
+	[request setPostValue:@"json" forKey:@"format"];
 	[request setUseKeychainPersistance:YES];
 	[request setUsername:@"joe"];
 	[request setPassword:@"testtest"];
@@ -55,10 +57,30 @@
 	[request startAsynchronous];	
 }
 
+- (IBAction) listPlaces: (id) sender {
+	NSURL *url = [NSURL URLWithString:@"http://www.hallenprojekt.de/places.json"];
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	[request start];
+	NSError *error = [request error];
+	if (!error) {
+		// Create SBJSON object to parse JSON
+		SBJSON *parser = [[SBJSON alloc] init];
+		NSString *json_string = [[NSString alloc] initWithString:[request responseString]];
+		// parse the JSON string into an object - assuming json_string is a NSString of JSON data
+		NSArray *places = [parser objectWithString:json_string error:nil];
+		for (NSDictionary *place in [places objectAtIndex:0])
+		{
+			NSLog(@"%@", [[place objectForKey:@"place"] objectForKey:@"name"]);
+		}
+	}
+	else {
+		NSLog(@"%@",[error localizedDescription]);
+	}
+}
 
--(IBAction) login: (id) sender{
+
+-(IBAction) setLocation: (id) sender{
 	[self setLocation];
-	
 }
 
 @end
