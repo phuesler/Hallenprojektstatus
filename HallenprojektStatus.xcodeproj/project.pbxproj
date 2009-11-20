@@ -12,6 +12,11 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		D873E26010B6CC7C00C9B0DD /* pomodoro.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25B10B6CC7B00C9B0DD /* pomodoro.png */; };
+		D873E26110B6CC7C00C9B0DD /* pomodoroBreak.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25C10B6CC7C00C9B0DD /* pomodoroBreak.png */; };
+		D873E26210B6CC7C00C9B0DD /* pomodoroFreeze.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25D10B6CC7C00C9B0DD /* pomodoroFreeze.png */; };
+		D873E26310B6CC7C00C9B0DD /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25E10B6CC7C00C9B0DD /* red.png */; };
+		D873E26410B6CC7C00C9B0DD /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25F10B6CC7C00C9B0DD /* twitter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* HallenprojektStatus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HallenprojektStatus-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* HallenprojektStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HallenprojektStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D873E25B10B6CC7B00C9B0DD /* pomodoro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoro.png; sourceTree = "<group>"; };
+		D873E25C10B6CC7C00C9B0DD /* pomodoroBreak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroBreak.png; sourceTree = "<group>"; };
+		D873E25D10B6CC7C00C9B0DD /* pomodoroFreeze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroFreeze.png; sourceTree = "<group>"; };
+		D873E25E10B6CC7C00C9B0DD /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		D873E25F10B6CC7C00C9B0DD /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,11 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D873E25B10B6CC7B00C9B0DD /* pomodoro.png */,
+				D873E25C10B6CC7C00C9B0DD /* pomodoroBreak.png */,
+				D873E25D10B6CC7C00C9B0DD /* pomodoroFreeze.png */,
+				D873E25E10B6CC7C00C9B0DD /* red.png */,
+				D873E25F10B6CC7C00C9B0DD /* twitter.png */,
 				256AC3F00F4B6AF500CF3369 /* HallenprojektStatus_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -161,6 +176,11 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				D873E26010B6CC7C00C9B0DD /* pomodoro.png in Resources */,
+				D873E26110B6CC7C00C9B0DD /* pomodoroBreak.png in Resources */,
+				D873E26210B6CC7C00C9B0DD /* pomodoroFreeze.png in Resources */,
+				D873E26310B6CC7C00C9B0DD /* red.png in Resources */,
+				D873E26410B6CC7C00C9B0DD /* twitter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

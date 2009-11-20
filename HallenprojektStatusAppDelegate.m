@@ -11,9 +11,20 @@
 @implementation HallenprojektStatusAppDelegate
 
 @synthesize window;
+@synthesize sbMenu;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
+	sbItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+	[sbItem retain];
+	NSBundle *bundle = [NSBundle mainBundle];
+	statusImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"pomodoro" ofType: @"png"]];
+	statusAltImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"pomodoroBreak" ofType: @"png"]];
+	[sbItem setToolTip: @"A tooltip"];
+	[sbItem setHighlightMode:YES];
+	[sbItem setEnabled:YES];
+	[sbItem setImage: statusImage];
+	[sbItem setAlternateImage: statusAltImage];
+	[sbItem setMenu:sbMenu];	
 }
 
 @end

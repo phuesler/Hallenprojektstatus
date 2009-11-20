@@ -10,8 +10,13 @@
 
 @interface HallenprojektStatusAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	NSStatusItem *sbItem;
+	NSMenu *sbMenu;
+	NSImage *statusImage;
+	NSImage *statusAltImage;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSMenu *sbMenu;
 
 @end
