@@ -14,12 +14,11 @@
 	NSMenu *sbMenu;
 	NSImage *statusImage;
 	NSImage *statusAltImage;
+	NSMenuItem *placesMenuItem;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *sbMenu;
-
--(IBAction) setLocation: (id) sender;
--(IBAction) listPlaces: (id) sender;
+@property (assign) IBOutlet NSMenuItem *placesMenuItem;
 
 @end
