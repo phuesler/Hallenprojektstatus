@@ -15,10 +15,12 @@
 	NSImage *statusImage;
 	NSImage *statusAltImage;
 	NSMenuItem *placesMenuItem;
+	NSObject *preferencesController;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *sbMenu;
 @property (assign) IBOutlet NSMenuItem *placesMenuItem;
+@property (assign) IBOutlet NSObject *preferencesController;
 
 @end

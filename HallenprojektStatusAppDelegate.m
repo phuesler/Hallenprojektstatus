@@ -13,12 +13,10 @@
 
 @implementation HallenprojektStatusAppDelegate
 
-@synthesize window;
-@synthesize sbMenu;
-@synthesize placesMenuItem;
+@synthesize window, sbMenu, placesMenuItem, preferencesController;
 
 - (void) fetchPlaces {
-	NSURL *url = [NSURL URLWithString:@"http://www.hallenprojekt.de/places.json"];
+	NSURL *url = [NSURL URLWithString:@"http://localhost:3000/places.json"];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	[request start];
 	NSError *error = [request error];
