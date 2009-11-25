@@ -13,6 +13,8 @@
 	NSPanel *panel;
 	NSSecureTextField *passwordTextField;
 	NSTextField *usernameTextField;
+	NSString * username;
+	NSString * password;
 }
 
 @property(assign) IBOutlet NSPanel *panel;
@@ -20,5 +22,7 @@
 @property(assign) IBOutlet NSTextField *usernameTextField;
 -(IBAction) saveCredentials: (id) sender;
 -(IBAction) loadPreferences: (id) sender;
+-(NSString *) getUsername;
+-(NSString *) getPassword;
 
 @end

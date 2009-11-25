@@ -56,37 +56,31 @@
 	[self fetchPlaces];
 }
 
-- (void)requestFinished:(ASIHTTPRequest *)request
-{
-	NSString *responseString = [request responseString];
-	NSLog(@"%@", responseString);	
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)request
-{
-	NSError *error = [request error];
-	NSLog(@"%@",[error localizedDescription]);
-	NSLog(@"handle errors found in error object");
-}
-
-- (void)setLocation:(NSString *) place_id {
+- (NSError *)setLocation:(NSString *) place_id {
 	NSURL *url = [NSURL URLWithString:@"http://localhost:3000/set_current_place"];
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
 	[request setPostValue:place_id forKey:@"current_place_id"];
 	[request setPostValue:@"json" forKey:@"format"];
 	[request setUseKeychainPersistance:YES];
-	[request setUsername:@"joe"];
-	[request setPassword:@"testtest"];
+	[request setUsername:[preferencesController getUsername]];
+	[request setPassword:[preferencesController getPassword]];
 	[request addRequestHeader:@"Accept" value:@"application/json"];
 	[request setDelegate:self];
-	[request start];	
+	[request start];
+	return [request error];
 }
 
 - (void)selectedItem:(id) sender {
 	NSMenuItem *item = (NSMenuItem *) sender;
-	NSLog(@"%d", [item tag]);
-	[self setLocation: [NSString stringWithFormat:@"%d", [item tag]]];
-	[item setTitle: [[item title] stringByAppendingString:@" (logging in)"]];
+	NSError *error = [self setLocation: [NSString stringWithFormat:@"%d", [item tag]]];
+	if(error){
+		NSLog(@"something went wrong");
+		NSLog(@"%@",[error localizedDescription]);
+		[preferencesController loadPreferences:self];
+	}else {
+		[item setTitle: [[item title] stringByAppendingString:@" (logged in)"]];		
+	}
+
 }
 
 - (IBAction) listPlaces: (id) sender {

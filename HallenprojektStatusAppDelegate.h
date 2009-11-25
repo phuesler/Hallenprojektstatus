@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PreferencesController.h";
 
 @interface HallenprojektStatusAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
@@ -15,12 +16,12 @@
 	NSImage *statusImage;
 	NSImage *statusAltImage;
 	NSMenuItem *placesMenuItem;
-	NSObject *preferencesController;
+	PreferencesController *preferencesController;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *sbMenu;
 @property (assign) IBOutlet NSMenuItem *placesMenuItem;
-@property (assign) IBOutlet NSObject *preferencesController;
+@property (assign) IBOutlet PreferencesController *preferencesController;
 
 @end
