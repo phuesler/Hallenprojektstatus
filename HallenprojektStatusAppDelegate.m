@@ -100,4 +100,15 @@
 - (IBAction) listPlaces: (id) sender {
 }
 
+-(void) dealloc {	
+    [timer invalidate];
+	[timer release];
+	[window release];
+    [statusImage release];
+    [statusAltImage release];
+	[preferencesController release];
+	[selectedItem release];
+    [super dealloc];
+}
+
 @end
