@@ -13,7 +13,7 @@
 
 @implementation HallenprojektStatusAppDelegate
 
-@synthesize window, sbMenu, placesMenuItem, preferencesController, currentlySelectedItem;
+@synthesize window, sbMenu, placesMenuItem, logoutItem, preferencesController, currentlySelectedItem;
 
 - (void) addItemsToMenu:(NSMenu *) menu fromDictionary:(NSDictionary *) dictionary{
 	for (NSDictionary *place in dictionary)
@@ -58,7 +58,8 @@
 	[sbItem setEnabled:YES];
 	[sbItem setImage: statusImage];
 	[sbItem setAlternateImage: statusAltImage];
-	[sbItem setMenu:sbMenu];	
+	[sbItem setMenu:sbMenu];
+	[sbMenu setAutoenablesItems:false];
 	[self fetchPlaces];
 	timer = [NSTimer scheduledTimerWithTimeInterval:600
 											 target:self
@@ -100,10 +101,15 @@
 		}
 		[item setState:NSOnState];
 		self.currentlySelectedItem = item;
+		[self.logoutItem setEnabled:true];
 	}
 }
 
-- (IBAction) listPlaces: (id) sender {
+- (IBAction) logout: (id) sender {
+	[self setLocation: @""];
+	[self.logoutItem setEnabled:false];
+	[self.currentlySelectedItem setState:NSOffState];
+	self.currentlySelectedItem = NULL;
 }
 
 -(void) dealloc {	
@@ -114,6 +120,7 @@
     [statusAltImage release];
 	[preferencesController release];
 	[selectedItem release];
+	[logoutItem release];
     [super dealloc];
 }
 

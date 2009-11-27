@@ -13,7 +13,6 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="29"/>
-			<integer value="533"/>
 			<integer value="565"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -73,6 +72,15 @@
 								<bool key="EncodedWithXMLCoder">YES</bool>
 							</object>
 						</object>
+					</object>
+					<object class="NSMenuItem" id="768532186">
+						<reference key="NSMenu" ref="631347596"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<string key="NSTitle">Logout</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="902647478"/>
+						<reference key="NSMixedImage" ref="538636861"/>
 					</object>
 					<object class="NSMenuItem" id="171293349">
 						<reference key="NSMenu" ref="631347596"/>
@@ -136,7 +144,7 @@
 			<object class="NSWindowTemplate" id="12588828">
 				<int key="NSWindowStyleMask">8211</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{131, 306}, {383, 123}}</string>
+				<string key="NSWindowRect">{{631, 636}, {383, 123}}</string>
 				<int key="NSWTFlags">1685585920</int>
 				<string key="NSWindowTitle">Preferences</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -276,7 +284,7 @@
 					<string key="NSFrameSize">{383, 123}</string>
 					<reference key="NSSuperview"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1680, 1028}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 			</object>
 		</object>
@@ -379,6 +387,22 @@
 					</object>
 					<int key="connectionID">610</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">logout:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="768532186"/>
+					</object>
+					<int key="connectionID">614</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">logoutItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="768532186"/>
+					</object>
+					<int key="connectionID">615</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -425,6 +449,7 @@
 							<reference ref="564236055"/>
 							<reference ref="376938576"/>
 							<reference ref="171293349"/>
+							<reference ref="768532186"/>
 						</object>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">StatusBar</string>
@@ -592,6 +617,11 @@
 						<reference key="object" ref="995568326"/>
 						<reference key="parent" ref="0"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">613</int>
+						<reference key="object" ref="768532186"/>
+						<reference key="parent" ref="631347596"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -618,6 +648,10 @@
 					<string>565.IBPluginDependency</string>
 					<string>565.IBWindowTemplateEditedContentRect</string>
 					<string>565.NSWindowTemplate.visibleAtLaunch</string>
+					<string>565.windowTemplate.hasMaxSize</string>
+					<string>565.windowTemplate.hasMinSize</string>
+					<string>565.windowTemplate.maxSize</string>
+					<string>565.windowTemplate.minSize</string>
 					<string>566.IBPluginDependency</string>
 					<string>567.IBPluginDependency</string>
 					<string>568.IBPluginDependency</string>
@@ -634,6 +668,7 @@
 					<string>579.IBPluginDependency</string>
 					<string>580.IBPluginDependency</string>
 					<string>594.IBPluginDependency</string>
+					<string>613.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -645,7 +680,7 @@
 					<integer value="1"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{325, 205}, {144, 63}}</string>
+					<string>{{325, 185}, {144, 83}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -653,10 +688,14 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{206, 405}, {383, 123}}</string>
+					<string>{{631, 636}, {383, 123}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{206, 405}, {383, 123}}</string>
+					<string>{{631, 636}, {383, 123}}</string>
 					<boolean value="NO"/>
+					<boolean value="NO"/>
+					<boolean value="NO"/>
+					<string>{383, 123}</string>
+					<string>{383, 123}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -665,6 +704,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{23, 794}, {245, 183}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -691,7 +731,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">612</int>
+			<int key="maxID">615</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -699,10 +739,15 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">HallenprojektStatusAppDelegate</string>
 					<string key="superclassName">NSObject</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">logout:</string>
+						<string key="NS.object.0">id</string>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>logoutItem</string>
 							<string>placesMenuItem</string>
 							<string>preferencesController</string>
 							<string>sbMenu</string>
@@ -710,6 +755,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSMenuItem</string>
 							<string>NSMenuItem</string>
 							<string>PreferencesController</string>
 							<string>NSMenu</string>

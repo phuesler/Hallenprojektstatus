@@ -18,12 +18,16 @@
 	NSMenuItem *placesMenuItem;
 	PreferencesController *preferencesController;
 	NSMenuItem *selectedItem;
+	NSMenuItem *logoutItem;
 	NSTimer *timer;
 }
+
+-(IBAction) logout: (id) sender;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *sbMenu;
 @property (assign) IBOutlet NSMenuItem *placesMenuItem;
+@property (assign) IBOutlet NSMenuItem *logoutItem;
 @property (assign) IBOutlet PreferencesController *preferencesController;
 @property (assign) NSMenuItem *currentlySelectedItem;
 
