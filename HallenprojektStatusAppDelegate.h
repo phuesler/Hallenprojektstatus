@@ -17,11 +17,13 @@
 	NSImage *statusAltImage;
 	NSMenuItem *placesMenuItem;
 	PreferencesController *preferencesController;
+	NSMenuItem *selectedItem;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *sbMenu;
 @property (assign) IBOutlet NSMenuItem *placesMenuItem;
 @property (assign) IBOutlet PreferencesController *preferencesController;
+@property (assign) NSMenuItem *currentlySelectedItem;
 
 @end

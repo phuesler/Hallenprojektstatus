@@ -13,7 +13,7 @@
 
 @implementation HallenprojektStatusAppDelegate
 
-@synthesize window, sbMenu, placesMenuItem, preferencesController;
+@synthesize window, sbMenu, placesMenuItem, preferencesController, currentlySelectedItem;
 
 - (void) fetchPlaces {
 	NSURL *url = [NSURL URLWithString:@"http://localhost:3000/places.json"];
@@ -76,7 +76,12 @@
 		NSLog(@"%@",[error localizedDescription]);
 		[preferencesController loadPreferences:self];
 	}else {
-		[item setTitle: [[item title] stringByAppendingString:@" (logged in)"]];		
+		if(self.currentlySelectedItem)
+		{
+			[self.currentlySelectedItem setState:NSOffState];
+		}
+		[item setState:NSOnState];
+		self.currentlySelectedItem = item;
 	}
 
 }
