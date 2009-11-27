@@ -58,13 +58,14 @@
 
 - (NSError *)setLocation:(NSString *) place_id {
 	NSURL *url = [NSURL URLWithString:@"http://localhost:3000/set_current_place"];
-	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
-	[request setPostValue:place_id forKey:@"current_place_id"];
-	[request setPostValue:@"json" forKey:@"format"];
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+	[request appendPostData:[[NSString stringWithFormat:@"current_place_id&%@",place_id] dataUsingEncoding:NSUTF8StringEncoding]];
+	[request setRequestMethod:@"POST"];
+	[request addRequestHeader:@"Accept" value:@"application/json"];
+	[request addRequestHeader:@"Content-Type" value:@"application/json"];
 	[request setUsername:[preferencesController getUsername]];
 	[request setPassword:[preferencesController getPassword]];
-	[request addRequestHeader:@"Accept" value:@"application/json"];
-	[request setDelegate:self];
+
 	[request start];
 	return [request error];
 }
@@ -83,7 +84,6 @@
 		[item setState:NSOnState];
 		self.currentlySelectedItem = item;
 	}
-
 }
 
 - (IBAction) listPlaces: (id) sender {
