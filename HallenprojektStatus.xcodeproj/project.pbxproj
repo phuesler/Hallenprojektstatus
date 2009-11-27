@@ -28,6 +28,7 @@
 		D873E43D10B716E600C9B0DD /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E43710B716E600C9B0DD /* SBJsonWriter.m */; };
 		D876795C10B8807600630865 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876795B10B8807600630865 /* PreferencesController.m */; };
 		D8882F0210B8AFB200CE8DE8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8882F0110B8AFB200CE8DE8 /* Security.framework */; };
+		D8EC02BD10C05CE200DB1DEF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D8EC02BC10C05CE200DB1DEF /* README.md */; };
 		D8ECFF3A10BFE00800DB1DEF /* SDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ECFF3910BFE00800DB1DEF /* SDKeychain.m */; };
 		D8ECFF3C10BFE74600DB1DEF /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF3B10BFE74600DB1DEF /* APPL.icns */; };
 		D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */; };
@@ -75,6 +76,7 @@
 		D876795A10B8807600630865 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		D876795B10B8807600630865 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		D8882F0110B8AFB200CE8DE8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D8EC02BC10C05CE200DB1DEF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D8ECFF3810BFE00800DB1DEF /* SDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKeychain.h; sourceTree = "<group>"; };
 		D8ECFF3910BFE00800DB1DEF /* SDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKeychain.m; sourceTree = "<group>"; };
 		D8ECFF3B10BFE74600DB1DEF /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				D8415D4710B989850007A2E3 /* Images */,
 				D8415D4810B9899E0007A2E3 /* IB */,
 				8D1107310486CEB800E47090 /* HallenprojektStatus-Info.plist */,
+				D8EC02BC10C05CE200DB1DEF /* README.md */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -292,6 +295,7 @@
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				D8ECFF3C10BFE74600DB1DEF /* APPL.icns in Resources */,
 				D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */,
+				D8EC02BD10C05CE200DB1DEF /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
