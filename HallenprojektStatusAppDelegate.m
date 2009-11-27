@@ -15,6 +15,17 @@
 
 @synthesize window, sbMenu, placesMenuItem, preferencesController, currentlySelectedItem;
 
+- (void) addItemsToMenu:(NSMenu *) menu fromDictionary:(NSDictionary *) dictionary{
+	for (NSDictionary *place in dictionary)
+	{
+		NSLog(@"wtf");
+		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[[place objectForKey:@"place"] objectForKey:@"name"] action:@selector(selectedItem:) keyEquivalent:@""];
+		[item setTag:[[[place objectForKey:@"place"] objectForKey:@"id"] intValue]];
+		[menu addItem:item];
+		
+	}	
+}
+
 - (void) fetchPlaces {
 	NSURL *url = [NSURL URLWithString:@"http://localhost:3000/places.json"];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -25,13 +36,8 @@
 		SBJSON *parser = [[SBJSON alloc] init];
 		NSString *json_string = [[NSString alloc] initWithString:[request responseString]];
 		NSArray *places = [parser objectWithString:json_string error:nil];
-		for (NSDictionary *place in [places objectAtIndex:1])
-		{
-			NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[[place objectForKey:@"place"] objectForKey:@"name"] action:@selector(selectedItem:) keyEquivalent:@""];
-			[item setTag:[[[place objectForKey:@"place"] objectForKey:@"id"] intValue]];
-			[menu addItem:item];
-			
-		}
+		[self addItemsToMenu:menu fromDictionary:[places objectAtIndex:0]];
+		[self addItemsToMenu:menu fromDictionary:[places objectAtIndex:1]];
 		[placesMenuItem setSubmenu:menu];
 		
 	}
