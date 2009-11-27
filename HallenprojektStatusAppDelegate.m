@@ -54,6 +54,11 @@
 	[sbItem setAlternateImage: statusAltImage];
 	[sbItem setMenu:sbMenu];	
 	[self fetchPlaces];
+	timer = [NSTimer scheduledTimerWithTimeInterval:600
+											 target:self
+										   selector: @selector(updateLocation)
+										   userInfo:nil
+											repeats: YES];
 }
 
 - (NSError *)setLocation:(NSString *) place_id {
@@ -68,6 +73,13 @@
 	[request start];
 	return [request error];
 }
+
+- (void) updateLocation {
+	if(self.currentlySelectedItem){
+		[self setLocation: [NSString stringWithFormat:@"%d", [self.currentlySelectedItem tag]]];
+	}
+}
+
 
 - (void)selectedItem:(id) sender {
 	NSMenuItem *item = (NSMenuItem *) sender;
@@ -87,6 +99,5 @@
 
 - (IBAction) listPlaces: (id) sender {
 }
-
 
 @end

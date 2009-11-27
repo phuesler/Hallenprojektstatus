@@ -18,6 +18,7 @@
 	NSMenuItem *placesMenuItem;
 	PreferencesController *preferencesController;
 	NSMenuItem *selectedItem;
+	NSTimer *timer;
 }
 
 @property (assign) IBOutlet NSWindow *window;
