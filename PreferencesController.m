@@ -7,66 +7,56 @@
 //
 
 #import "PreferencesController.h"
+#import "SDKeychain.h"
 
 
 @implementation PreferencesController
-@synthesize panel, passwordTextField, usernameTextField;
+@synthesize panel, passwordTextField, usernameTextField, dataFile, username;
+
+- (void) setupSupportFile {
+	NSLog(@"setup support file");
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSString *appSupport =	[NSSearchPathForDirectoriesInDomains( NSApplicationSupportDirectory,
+																 NSUserDomainMask, YES) objectAtIndex:0];
+	NSString *dir = [NSString stringWithFormat:@"%@/HallenprojektStatus", appSupport];
+	[fileManager createDirectoryAtPath:dir 
+		   withIntermediateDirectories:YES
+							attributes:nil
+								 error: nil];
+	
+	self.dataFile = [dir stringByAppendingPathComponent:@"preferences.plist"];
+}
+
+- (id) init {
+	if ((self = [super init])) {
+		[self setupSupportFile];
+		self.username =  [NSString stringWithContentsOfFile:self.dataFile encoding:NSUTF8StringEncoding error:nil];
+	}
+	return self;
+}
+
+- (void) storeUsername{
+	
+	
+}
 
 - (NSString *) getUsername{
-	return @"test";
+	return self.username;
 }
 
 - (NSString *) getPassword{
-	return @"testtest";	
+	return [SDKeychain securePasswordForIdentifier: self.username];
 }
 
 -(IBAction) saveCredentials: (id) sender {
-	OSStatus status = 0;
-	NSString *serviceName = @"hallenprojekt.de status app";
-	SecKeychainRef keychain = nil;
-	SecKeychainItemRef item = nil;
-	
-	status = SecKeychainFindGenericPassword(	keychain,
-										   [serviceName lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
-										   [serviceName UTF8String],
-										   [[usernameTextField stringValue] lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
-										   [[usernameTextField stringValue] UTF8String], NULL, NULL, &item);
-	if (status == errSecItemNotFound){
-		status = SecKeychainAddGenericPassword(	keychain,
-											  [serviceName lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
-											  [serviceName UTF8String],
-											  [[usernameTextField stringValue] lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
-											  [[usernameTextField stringValue] UTF8String],
-											  [[passwordTextField stringValue] lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
-											  [[passwordTextField stringValue] UTF8String], &item);
-		NSLog(@"SecKeychainAddGenericPassword: %d", status);
-		
-	}else {
-		status = SecKeychainItemModifyContent(item, NULL, [[passwordTextField stringValue] lengthOfBytesUsingEncoding:NSUTF8StringEncoding],
-											  [[passwordTextField stringValue] UTF8String]);
-		SecKeychainAttribute attr;
-		SecKeychainAttributeList attrList;
-		
-		// The attribute we want is the account name
-		attr.tag = kSecAccountItemAttr;
-		attr.length = strlen(username);
-		attr.data = (void*)username;
-		
-		attrList.count = 1;
-		attrList.attr = &attr;
-		
-		// Want to modify so that Keychain entry metadata is preserved.
-		SecKeychainItemModifyContent(itemRef, &attrList, strlen(password), (void *)password);
-		CFRelease(itemRef);
-		
-		NSLog(@"SecKeychainItemModifyContent: %d", status); // wrPermErr = -61, /*write permissions status*/
-	}
-	
-	NSLog(@"saved credentials");
-	
+	self.username = [usernameTextField stringValue];
+	[self.username writeToFile:self.dataFile atomically: YES encoding: NSUTF8StringEncoding error: nil];
+	[SDKeychain setSecurePassword:[passwordTextField stringValue] 
+				  forIdentifier: self.username];
+	[panel close];
+	 
 }
 -(IBAction) loadPreferences: (id) sender {
-	NSLog(@"load preferences");
 	[panel makeKeyAndOrderFront:self];
 	[panel makeFirstResponder:panel];
 }

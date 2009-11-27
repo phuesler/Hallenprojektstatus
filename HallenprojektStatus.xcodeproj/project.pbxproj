@@ -12,11 +12,6 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		D873E26010B6CC7C00C9B0DD /* pomodoro.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25B10B6CC7B00C9B0DD /* pomodoro.png */; };
-		D873E26110B6CC7C00C9B0DD /* pomodoroBreak.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25C10B6CC7C00C9B0DD /* pomodoroBreak.png */; };
-		D873E26210B6CC7C00C9B0DD /* pomodoroFreeze.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25D10B6CC7C00C9B0DD /* pomodoroFreeze.png */; };
-		D873E26310B6CC7C00C9B0DD /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25E10B6CC7C00C9B0DD /* red.png */; };
-		D873E26410B6CC7C00C9B0DD /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = D873E25F10B6CC7C00C9B0DD /* twitter.png */; };
 		D873E35710B703F900C9B0DD /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E34E10B703F800C9B0DD /* ASIFormDataRequest.m */; };
 		D873E35810B703F900C9B0DD /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E35010B703F800C9B0DD /* ASIHTTPRequest.m */; };
 		D873E35910B703F900C9B0DD /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E35210B703F800C9B0DD /* ASIInputStream.m */; };
@@ -33,6 +28,9 @@
 		D873E43D10B716E600C9B0DD /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E43710B716E600C9B0DD /* SBJsonWriter.m */; };
 		D876795C10B8807600630865 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876795B10B8807600630865 /* PreferencesController.m */; };
 		D8882F0210B8AFB200CE8DE8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8882F0110B8AFB200CE8DE8 /* Security.framework */; };
+		D8ECFF3A10BFE00800DB1DEF /* SDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ECFF3910BFE00800DB1DEF /* SDKeychain.m */; };
+		D8ECFF3C10BFE74600DB1DEF /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF3B10BFE74600DB1DEF /* APPL.icns */; };
+		D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,11 +46,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* HallenprojektStatus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HallenprojektStatus-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* HallenprojektStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HallenprojektStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D873E25B10B6CC7B00C9B0DD /* pomodoro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoro.png; sourceTree = "<group>"; };
-		D873E25C10B6CC7C00C9B0DD /* pomodoroBreak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroBreak.png; sourceTree = "<group>"; };
-		D873E25D10B6CC7C00C9B0DD /* pomodoroFreeze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pomodoroFreeze.png; sourceTree = "<group>"; };
-		D873E25E10B6CC7C00C9B0DD /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
-		D873E25F10B6CC7C00C9B0DD /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		D873E34D10B703F800C9B0DD /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		D873E34E10B703F800C9B0DD /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
 		D873E34F10B703F800C9B0DD /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
@@ -82,6 +75,10 @@
 		D876795A10B8807600630865 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		D876795B10B8807600630865 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		D8882F0110B8AFB200CE8DE8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D8ECFF3810BFE00800DB1DEF /* SDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKeychain.h; sourceTree = "<group>"; };
+		D8ECFF3910BFE00800DB1DEF /* SDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKeychain.m; sourceTree = "<group>"; };
+		D8ECFF3B10BFE74600DB1DEF /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
+		D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_bar_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +100,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D8ECFF3710BFDFEA00DB1DEF /* keychain */,
 				D873E42A10B716E600C9B0DD /* JSON */,
 				D873E33B10B703B900C9B0DD /* http */,
 				256AC3D80F4B6AC300CF3369 /* HallenprojektStatusAppDelegate.h */,
@@ -167,6 +165,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D8ECFF3B10BFE74600DB1DEF /* APPL.icns */,
 				D8415D4710B989850007A2E3 /* Images */,
 				D8415D4810B9899E0007A2E3 /* IB */,
 				8D1107310486CEB800E47090 /* HallenprojektStatus-Info.plist */,
@@ -187,11 +186,7 @@
 		D8415D4710B989850007A2E3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D873E25B10B6CC7B00C9B0DD /* pomodoro.png */,
-				D873E25C10B6CC7C00C9B0DD /* pomodoroBreak.png */,
-				D873E25D10B6CC7C00C9B0DD /* pomodoroFreeze.png */,
-				D873E25E10B6CC7C00C9B0DD /* red.png */,
-				D873E25F10B6CC7C00C9B0DD /* twitter.png */,
+				D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -241,6 +236,15 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		D8ECFF3710BFDFEA00DB1DEF /* keychain */ = {
+			isa = PBXGroup;
+			children = (
+				D8ECFF3810BFE00800DB1DEF /* SDKeychain.h */,
+				D8ECFF3910BFE00800DB1DEF /* SDKeychain.m */,
+			);
+			name = keychain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -286,11 +290,8 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				D873E26010B6CC7C00C9B0DD /* pomodoro.png in Resources */,
-				D873E26110B6CC7C00C9B0DD /* pomodoroBreak.png in Resources */,
-				D873E26210B6CC7C00C9B0DD /* pomodoroFreeze.png in Resources */,
-				D873E26310B6CC7C00C9B0DD /* red.png in Resources */,
-				D873E26410B6CC7C00C9B0DD /* twitter.png in Resources */,
+				D8ECFF3C10BFE74600DB1DEF /* APPL.icns in Resources */,
+				D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +316,7 @@
 				D873E43C10B716E600C9B0DD /* SBJsonParser.m in Sources */,
 				D873E43D10B716E600C9B0DD /* SBJsonWriter.m in Sources */,
 				D876795C10B8807600630865 /* PreferencesController.m in Sources */,
+				D8ECFF3A10BFE00800DB1DEF /* SDKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

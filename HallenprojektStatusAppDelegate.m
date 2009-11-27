@@ -45,8 +45,8 @@
 	sbItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[sbItem retain];
 	NSBundle *bundle = [NSBundle mainBundle];
-	statusImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"pomodoro" ofType: @"png"]];
-	statusAltImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"pomodoroBreak" ofType: @"png"]];
+	statusImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon" ofType: @"png"]];
+	statusAltImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon" ofType: @"png"]];
 	[sbItem setToolTip: @"A tooltip"];
 	[sbItem setHighlightMode:YES];
 	[sbItem setEnabled:YES];
@@ -61,7 +61,6 @@
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
 	[request setPostValue:place_id forKey:@"current_place_id"];
 	[request setPostValue:@"json" forKey:@"format"];
-	[request setUseKeychainPersistance:YES];
 	[request setUsername:[preferencesController getUsername]];
 	[request setPassword:[preferencesController getPassword]];
 	[request addRequestHeader:@"Accept" value:@"application/json"];
@@ -74,7 +73,6 @@
 	NSMenuItem *item = (NSMenuItem *) sender;
 	NSError *error = [self setLocation: [NSString stringWithFormat:@"%d", [item tag]]];
 	if(error){
-		NSLog(@"something went wrong");
 		NSLog(@"%@",[error localizedDescription]);
 		[preferencesController loadPreferences:self];
 	}else {
