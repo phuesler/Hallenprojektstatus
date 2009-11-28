@@ -6,6 +6,7 @@
 *.pyc 
 *~.nib/
 build/*
+appcast/*
 
 .DS_Store
 profile

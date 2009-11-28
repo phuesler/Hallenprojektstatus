@@ -16,6 +16,7 @@
 	NSImage *statusImage;
 	NSImage *statusAltImage;
 	NSMenuItem *placesMenuItem;
+	NSMenuItem *currentlySelectedItem;
 	PreferencesController *preferencesController;
 	NSMenuItem *selectedItem;
 	NSMenuItem *logoutItem;

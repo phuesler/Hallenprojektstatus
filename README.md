@@ -4,6 +4,17 @@ Super alpha status bar app for http://www.hallenprojekt.de
 
 This is my first cocoa app, which means it is hackish and its development involved a lot of trial and error. Help is appreciated.
 
+## Requirements to build diskimage
+
+* Xcode
+* Ruby
+* choctop (gem install choctop)
+
+## Building a disk image
+
+1. run rake dmg
+2. open appcast/build/HallenprojektStatus.dmg
+
 ## TODOS
 
 * Create disk image
