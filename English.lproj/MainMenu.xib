@@ -76,7 +76,7 @@
 					<object class="NSMenuItem" id="768532186">
 						<reference key="NSMenu" ref="631347596"/>
 						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">Logout</string>
+						<string key="NSTitle">Check out</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="902647478"/>
@@ -84,7 +84,7 @@
 					</object>
 					<object class="NSMenuItem" id="171293349">
 						<reference key="NSMenu" ref="631347596"/>
-						<string key="NSTitle">Einstellungen</string>
+						<string key="NSTitle">Preferences</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="902647478"/>
@@ -122,14 +122,6 @@
 									<string key="NSTitle">Quit HallenprojektStatus</string>
 									<string key="NSKeyEquiv">q</string>
 									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="902647478"/>
-									<reference key="NSMixedImage" ref="538636861"/>
-								</object>
-								<object class="NSMenuItem" id="744520158">
-									<reference key="NSMenu" ref="110575045"/>
-									<string key="NSTitle">test</string>
-									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="902647478"/>
 									<reference key="NSMixedImage" ref="538636861"/>
@@ -489,7 +481,6 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="632727374"/>
-							<reference ref="744520158"/>
 						</object>
 						<reference key="parent" ref="694149608"/>
 					</object>
@@ -608,11 +599,6 @@
 						<reference key="parent" ref="250817395"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">594</int>
-						<reference key="object" ref="744520158"/>
-						<reference key="parent" ref="110575045"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">598</int>
 						<reference key="object" ref="995568326"/>
 						<reference key="parent" ref="0"/>
@@ -667,7 +653,6 @@
 					<string>574.IBPluginDependency</string>
 					<string>579.IBPluginDependency</string>
 					<string>580.IBPluginDependency</string>
-					<string>594.IBPluginDependency</string>
 					<string>613.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
@@ -704,7 +689,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{23, 794}, {245, 183}}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
