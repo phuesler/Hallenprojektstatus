@@ -6,7 +6,7 @@ This is my first cocoa app, which means it is hackish and its development involv
 
 ## Download
 
-The most recent version can be found [here.](hallenprojekt.huesler-informatik.ch/HallenprojektStatus.dmg)
+The most recent version can be found [here.](http://hallenprojekt.huesler-informatik.ch/HallenprojektStatus.dmg)
 
 ## Requirements to build diskimage
 
