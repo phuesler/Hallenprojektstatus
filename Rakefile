@@ -2,12 +2,31 @@ require "rubygems"
 require "rake"
 
 require "choctop"
+require "ftp_sync"
+require 'highline/import'
+
+module ChocTop::Appcast
+  def upload_appcast
+    passwd = ask("Password for ftp server please: ") { |q| q.echo = "x"}
+    ftp = FtpSync.new('ftp.huesler-informatik.ch', 'hallenprojekt@huesler-informatik.ch', passwd.chomp)
+    ftp.sync(build_path, '/')
+  end
+end
+
+desc "Cleanup"
+task :cleanup do
+  puts "Cleaning up directories"
+  `rm -Rf appcast`
+  `rm -Rf build/Release/dmg`
+end
+
+
+desc "Release"
+task :release => [:cleanup,:build,:dmg,:feed,:upload] do
+end
 
 ChocTop.new do |s|
-  # Remote upload target (set host if not same as Info.plist['SUFeedURL'])
-  # s.host     = 'hallenprojektstatus.com'
-  s.remote_dir = '/path/to/upload/root/of/app'
-
+  s.info_plist_path = 'HallenprojektStatus-Info.plist'
   # Custom DMG
   # s.background_file = "background.jpg"
   # s.app_icon_position = [100, 90]

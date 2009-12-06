@@ -12,6 +12,9 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		D840D44F10CAE2CA004D4824 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D840D44E10CAE2CA004D4824 /* Sparkle.framework */; };
+		D840D59010CB103C004D4824 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D840D44E10CAE2CA004D4824 /* Sparkle.framework */; };
+		D840D5BC10CB29C0004D4824 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = D840D5BB10CB29C0004D4824 /* dsa_pub.pem */; };
 		D873E35710B703F900C9B0DD /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E34E10B703F800C9B0DD /* ASIFormDataRequest.m */; };
 		D873E35810B703F900C9B0DD /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E35010B703F800C9B0DD /* ASIHTTPRequest.m */; };
 		D873E35910B703F900C9B0DD /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E35210B703F800C9B0DD /* ASIInputStream.m */; };
@@ -34,6 +37,19 @@
 		D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D840D46E10CAE31A004D4824 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D840D59010CB103C004D4824 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
@@ -47,6 +63,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* HallenprojektStatus-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HallenprojektStatus-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* HallenprojektStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HallenprojektStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D840D44E10CAE2CA004D4824 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		D840D5BB10CB29C0004D4824 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		D873E34D10B703F800C9B0DD /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
 		D873E34E10B703F800C9B0DD /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIFormDataRequest.m; sourceTree = "<group>"; };
 		D873E34F10B703F800C9B0DD /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequest.h; sourceTree = "<group>"; };
@@ -93,6 +111,7 @@
 				D873E36410B704AF00C9B0DD /* libz.1.2.3.dylib in Frameworks */,
 				D873E36610B704C400C9B0DD /* CoreServices.framework in Frameworks */,
 				D8882F0210B8AFB200CE8DE8 /* Security.framework in Frameworks */,
+				D840D44F10CAE2CA004D4824 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +135,11 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8882F0110B8AFB200CE8DE8 /* Security.framework */,
+				D873E36110B7048A00C9B0DD /* SystemConfiguration.framework */,
+				D873E36310B704AF00C9B0DD /* libz.1.2.3.dylib */,
+				D873E36510B704C400C9B0DD /* CoreServices.framework */,
+				D840D44E10CAE2CA004D4824 /* Sparkle.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -147,10 +171,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				D873E36110B7048A00C9B0DD /* SystemConfiguration.framework */,
-				D873E36310B704AF00C9B0DD /* libz.1.2.3.dylib */,
-				D873E36510B704C400C9B0DD /* CoreServices.framework */,
-				D8882F0110B8AFB200CE8DE8 /* Security.framework */,
 			);
 			name = HallenprojektStatus;
 			sourceTree = "<group>";
@@ -167,6 +187,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D840D5BB10CB29C0004D4824 /* dsa_pub.pem */,
 				D8ECFF3B10BFE74600DB1DEF /* APPL.icns */,
 				D8415D4710B989850007A2E3 /* Images */,
 				D8415D4810B9899E0007A2E3 /* IB */,
@@ -258,6 +279,7 @@
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
+				D840D46E10CAE31A004D4824 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -296,6 +318,7 @@
 				D8ECFF3C10BFE74600DB1DEF /* APPL.icns in Resources */,
 				D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */,
 				D8EC02BD10C05CE200DB1DEF /* README.md in Resources */,
+				D840D5BC10CB29C0004D4824 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +374,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -368,6 +395,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HallenprojektStatus_Prefix.pch;

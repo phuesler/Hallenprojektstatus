@@ -18,7 +18,6 @@
 - (void) addItemsToMenu:(NSMenu *) menu fromDictionary:(NSDictionary *) dictionary{
 	for (NSDictionary *place in dictionary)
 	{
-		NSLog(@"wtf");
 		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[[place objectForKey:@"place"] objectForKey:@"name"] action:@selector(selectedItem:) keyEquivalent:@""];
 		[item setTag:[[[place objectForKey:@"place"] objectForKey:@"id"] intValue]];
 		[menu addItem:item];
@@ -53,7 +52,7 @@
 	NSBundle *bundle = [NSBundle mainBundle];
 	statusImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon" ofType: @"png"]];
 	statusAltImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon" ofType: @"png"]];
-	[sbItem setToolTip: @"A tooltip"];
+	[sbItem setToolTip: @"Hallenprojekt Status App"];
 	[sbItem setHighlightMode:YES];
 	[sbItem setEnabled:YES];
 	[sbItem setImage: statusImage];
