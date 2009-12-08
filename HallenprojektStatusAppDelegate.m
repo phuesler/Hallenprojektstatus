@@ -25,6 +25,15 @@
 	}	
 }
 
+- (void) fileNotifications
+{
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self 
+														   selector: @selector(receiveSleepNote:) name: NSWorkspaceWillSleepNotification object: NULL];
+    [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver: self 
+														   selector: @selector(receiveWakeNote:) name: NSWorkspaceDidWakeNotification object: NULL];
+}
+
+
 - (void) setStatusIcon {
 	NSBundle *bundle = [NSBundle mainBundle];
 	if(loggedIn){
@@ -75,6 +84,7 @@
 										   selector: @selector(updateLocation)
 										   userInfo:nil
 											repeats: YES];
+	[self fileNotifications];
 }
 
 - (NSError *)setLocation:(NSString *) place_id {
@@ -119,14 +129,28 @@
 	}
 }
 
-- (IBAction) logout: (id) sender {
-	[self setLocation: @""];
+- (void) updateMenuForLogoutState {
 	[self.logoutItem setEnabled:false];
 	[self.currentlySelectedItem setState:NSOffState];
 	self.currentlySelectedItem = NULL;
 	[self.logoutItem setTitle:@"Check out"];
 	loggedIn = false;
-	[self setStatusIcon];
+	[self setStatusIcon];	
+}
+
+- (IBAction) logout: (id) sender {
+	[self setLocation: @""];
+	[self updateMenuForLogoutState];
+}
+
+- (void) receiveSleepNote: (NSNotification*) note
+{
+	[self updateMenuForLogoutState];
+}
+
+- (void) receiveWakeNote: (NSNotification*) note
+{
+	//	update list of places;
 }
 
 -(void) dealloc {	
