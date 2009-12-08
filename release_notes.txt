@@ -1,5 +1,11 @@
-h1. <span>2009-11-28</span> Release 0.1.0
+h1. <span>2009-12-08</span> Release 0.1.1
 
-h2. Initial release
+h2. New features
 
-Yay! First release.
+* New icons
+* Icon changes based on login status
+* Show at which place the user is currently logged in
+* Logout when computer goes to sleep
+* Bugfix for Leopard 10.5.*
+* Link to website
+* About panel

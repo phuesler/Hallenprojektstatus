@@ -1,11 +1,3 @@
-//
-//  PreferencesController.h
-//  HallenprojektStatus
-//
-//  Created by kafka on 21.11.09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
 
 @interface PreferencesController : NSObject {

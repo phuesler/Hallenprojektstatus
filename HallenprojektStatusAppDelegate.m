@@ -1,10 +1,3 @@
-//
-//  HallenprojektStatusAppDelegate.m
-//  HallenprojektStatus
-//
-//  Created by kafka on 20.11.09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
-//
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "ASINetworkQueue.h"

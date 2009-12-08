@@ -1,11 +1,3 @@
-//
-//  PreferencesController.m
-//  HallenprojektStatus
-//
-//  Created by kafka on 21.11.09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
-//
-
 #import "PreferencesController.h"
 #import "SDKeychain.h"
 
