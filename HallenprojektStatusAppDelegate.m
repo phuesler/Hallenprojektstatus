@@ -103,7 +103,9 @@
 	if(error){
 		NSLog(@"%@",[error localizedDescription]);
 		[preferencesController loadPreferences:self];
-	}else {
+	}
+	else 
+	{
 		if(self.currentlySelectedItem)
 		{
 			[self.currentlySelectedItem setState:NSOffState];
@@ -111,6 +113,7 @@
 		[item setState:NSOnState];
 		self.currentlySelectedItem = item;
 		[self.logoutItem setEnabled:true];
+		[self.logoutItem setTitle:[NSString stringWithFormat:@"Check out from %@", [item title]]];
 		loggedIn = true;
 		[self setStatusIcon];
 	}
@@ -121,6 +124,7 @@
 	[self.logoutItem setEnabled:false];
 	[self.currentlySelectedItem setState:NSOffState];
 	self.currentlySelectedItem = NULL;
+	[self.logoutItem setTitle:@"Check out"];
 	loggedIn = false;
 	[self setStatusIcon];
 }
