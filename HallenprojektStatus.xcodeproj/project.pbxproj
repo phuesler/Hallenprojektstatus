@@ -31,10 +31,11 @@
 		D873E43D10B716E600C9B0DD /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D873E43710B716E600C9B0DD /* SBJsonWriter.m */; };
 		D876795C10B8807600630865 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = D876795B10B8807600630865 /* PreferencesController.m */; };
 		D8882F0210B8AFB200CE8DE8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8882F0110B8AFB200CE8DE8 /* Security.framework */; };
+		D8B9A2AE10CE91900075EE41 /* status_bar_icon_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = D8B9A2AD10CE91900075EE41 /* status_bar_icon_inactive.png */; };
 		D8EC02BD10C05CE200DB1DEF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D8EC02BC10C05CE200DB1DEF /* README.md */; };
 		D8ECFF3A10BFE00800DB1DEF /* SDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ECFF3910BFE00800DB1DEF /* SDKeychain.m */; };
 		D8ECFF3C10BFE74600DB1DEF /* APPL.icns in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF3B10BFE74600DB1DEF /* APPL.icns */; };
-		D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */; };
+		D8ECFF6E10BFE99000DB1DEF /* status_bar_icon_active.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ECFF6D10BFE99000DB1DEF /* status_bar_icon_active.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,11 +95,12 @@
 		D876795A10B8807600630865 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		D876795B10B8807600630865 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		D8882F0110B8AFB200CE8DE8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D8B9A2AD10CE91900075EE41 /* status_bar_icon_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_bar_icon_inactive.png; sourceTree = "<group>"; };
 		D8EC02BC10C05CE200DB1DEF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		D8ECFF3810BFE00800DB1DEF /* SDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKeychain.h; sourceTree = "<group>"; };
 		D8ECFF3910BFE00800DB1DEF /* SDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDKeychain.m; sourceTree = "<group>"; };
 		D8ECFF3B10BFE74600DB1DEF /* APPL.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = APPL.icns; sourceTree = "<group>"; };
-		D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_bar_icon.png; sourceTree = "<group>"; };
+		D8ECFF6D10BFE99000DB1DEF /* status_bar_icon_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_bar_icon_active.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +212,8 @@
 		D8415D4710B989850007A2E3 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D8ECFF6D10BFE99000DB1DEF /* status_bar_icon.png */,
+				D8B9A2AD10CE91900075EE41 /* status_bar_icon_inactive.png */,
+				D8ECFF6D10BFE99000DB1DEF /* status_bar_icon_active.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -316,9 +319,10 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				D8ECFF3C10BFE74600DB1DEF /* APPL.icns in Resources */,
-				D8ECFF6E10BFE99000DB1DEF /* status_bar_icon.png in Resources */,
+				D8ECFF6E10BFE99000DB1DEF /* status_bar_icon_active.png in Resources */,
 				D8EC02BD10C05CE200DB1DEF /* README.md in Resources */,
 				D840D5BC10CB29C0004D4824 /* dsa_pub.pem in Resources */,
+				D8B9A2AE10CE91900075EE41 /* status_bar_icon_inactive.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

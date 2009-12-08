@@ -25,6 +25,19 @@
 	}	
 }
 
+- (void) setStatusIcon {
+	NSBundle *bundle = [NSBundle mainBundle];
+	if(loggedIn){
+		statusImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon_active" ofType: @"png"]];	
+	}
+	else {
+		statusImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon_inactive" ofType: @"png"]];		
+	}
+	[sbItem setImage: statusImage];
+	[sbItem setAlternateImage: statusImage];
+
+}
+
 - (void) fetchPlaces {
 	NSURL *url = [NSURL URLWithString:@"http://www.hallenprojekt.de/places.json"];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -47,16 +60,13 @@
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	loggedIn = false;
 	sbItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	[sbItem retain];
-	NSBundle *bundle = [NSBundle mainBundle];
-	statusImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon" ofType: @"png"]];
-	statusAltImage = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource: @"status_bar_icon" ofType: @"png"]];
+	[self setStatusIcon];
 	[sbItem setToolTip: @"Hallenprojekt Status App"];
 	[sbItem setHighlightMode:YES];
 	[sbItem setEnabled:YES];
-	[sbItem setImage: statusImage];
-	[sbItem setAlternateImage: statusAltImage];
 	[sbItem setMenu:sbMenu];
 	[sbMenu setAutoenablesItems:false];
 	[self fetchPlaces];
@@ -101,6 +111,8 @@
 		[item setState:NSOnState];
 		self.currentlySelectedItem = item;
 		[self.logoutItem setEnabled:true];
+		loggedIn = true;
+		[self setStatusIcon];
 	}
 }
 
@@ -109,6 +121,8 @@
 	[self.logoutItem setEnabled:false];
 	[self.currentlySelectedItem setState:NSOffState];
 	self.currentlySelectedItem = NULL;
+	loggedIn = false;
+	[self setStatusIcon];
 }
 
 -(void) dealloc {	
@@ -116,7 +130,6 @@
 	[timer release];
 	[window release];
     [statusImage release];
-    [statusAltImage release];
 	[preferencesController release];
 	[selectedItem release];
 	[logoutItem release];

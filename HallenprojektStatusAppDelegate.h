@@ -18,13 +18,13 @@
 	NSStatusItem *sbItem;
 	NSMenu *sbMenu;
 	NSImage *statusImage;
-	NSImage *statusAltImage;
 	NSMenuItem *placesMenuItem;
 	NSMenuItem *currentlySelectedItem;
 	PreferencesController *preferencesController;
 	NSMenuItem *selectedItem;
 	NSMenuItem *logoutItem;
 	NSTimer *timer;
+	BOOL loggedIn;
 }
 
 -(IBAction) logout: (id) sender;
