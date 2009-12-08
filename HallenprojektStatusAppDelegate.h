@@ -9,11 +9,11 @@
 #import <Cocoa/Cocoa.h>
 #import "PreferencesController.h";
 
-#if (MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5)
-@interface HallenprojektStatusAppDelegate : NSObject {
-#else
+//#if (MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5)
+//@interface HallenprojektStatusAppDelegate : NSObject {
+//#else
 @interface HallenprojektStatusAppDelegate : NSObject <NSApplicationDelegate> {
-#endif
+//#endif
     NSWindow *window;
 	NSStatusItem *sbItem;
 	NSMenu *sbMenu;
@@ -28,6 +28,7 @@
 }
 
 -(IBAction) logout: (id) sender;
+-(IBAction) gotoWebsite: (id) sender;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet NSMenu *sbMenu;

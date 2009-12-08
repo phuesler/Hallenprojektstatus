@@ -143,6 +143,10 @@
 	[self updateMenuForLogoutState];
 }
 
+-(IBAction) gotoWebsite: (id) sender{
+ [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.hallenprojekt.de"]];
+}
+
 - (void) receiveSleepNote: (NSNotification*) note
 {
 	[self updateMenuForLogoutState];
