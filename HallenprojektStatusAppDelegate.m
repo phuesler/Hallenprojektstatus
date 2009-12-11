@@ -41,7 +41,7 @@
 }
 
 - (void) fetchPlaces {
-	NSURL *url = [NSURL URLWithString:@"http://www.hallenprojekt.de/places.json"];
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HALLENPROJEKT_SERVER,@"places.json"]];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
 	[request start];
 	NSError *error = [request error];
@@ -81,7 +81,7 @@
 }
 
 - (NSError *)setLocation:(NSString *) place_id {
-	NSURL *url = [NSURL URLWithString:@"http://www.hallenprojekt.de/set_current_place"];
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HALLENPROJEKT_SERVER,@"set_current_place"]];
 
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
 	[request setPostValue:place_id forKey:@"current_place_id"];

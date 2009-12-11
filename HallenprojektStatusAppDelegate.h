@@ -1,6 +1,12 @@
 #import <Cocoa/Cocoa.h>
 #import "PreferencesController.h";
 
+#if DEBUG
+ #define HALLENPROJEKT_SERVER @"http://localhost:3000/"
+#else
+ #define HALLENPROJEKT_SERVER @"http://www.hallenprojekt.de/"
+#endif
+
 #if (MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_5)
  @interface HallenprojektStatusAppDelegate : NSObject {
 #else
