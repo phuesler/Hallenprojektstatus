@@ -84,7 +84,24 @@
 	[self fileNotifications];
 }
 
-- (NSError *)setLocation:(NSString *) place_id {
+- (void)settingLocationFinished:(ASIHTTPRequest *)request {
+	if (self.currentlySelectedItem) {
+		[self.currentlySelectedItem setState:NSOnState];
+		[self.logoutItem setEnabled:true];
+		[self.logoutItem setTitle:[NSString stringWithFormat:@"Check out from %@", [self.currentlySelectedItem title]]];
+		loggedIn = true;
+		[self setStatusIcon];			
+	}
+}
+
+- (void)settingLocationFailed:(ASIHTTPRequest *)request
+{
+	NSLog(@"%@",[[request error] localizedDescription]);
+	[preferencesController loadPreferences:self];
+}
+
+
+- (void)setLocation:(NSString *) place_id {
 	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HALLENPROJEKT_SERVER,@"set_current_place"]];
 
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
@@ -93,8 +110,9 @@
 	[request setPassword:[preferencesController getPassword]];
 	[request addRequestHeader:@"Accept" value:@"application/json"];
 	[request setDelegate:self];
-	[request start];
-	return [request error];
+	[request setDidFinishSelector:@selector(settingLocationFinished:)];
+	[request setDidFailSelector:@selector(settingLocationFailed:)];	
+	[request startAsynchronous];
 }
 
 - (void) updateLocation {
@@ -106,24 +124,12 @@
 
 - (void)selectedItem:(id) sender {
 	NSMenuItem *item = (NSMenuItem *) sender;
-	NSError *error = [self setLocation: [NSString stringWithFormat:@"%d", [item tag]]];
-	if(error){
-		NSLog(@"%@",[error localizedDescription]);
-		[preferencesController loadPreferences:self];
-	}
-	else 
+	if(self.currentlySelectedItem)
 	{
-		if(self.currentlySelectedItem)
-		{
-			[self.currentlySelectedItem setState:NSOffState];
-		}
-		[item setState:NSOnState];
-		self.currentlySelectedItem = item;
-		[self.logoutItem setEnabled:true];
-		[self.logoutItem setTitle:[NSString stringWithFormat:@"Check out from %@", [item title]]];
-		loggedIn = true;
-		[self setStatusIcon];
-	}
+		[self.currentlySelectedItem setState:NSOffState];
+	}	
+	self.currentlySelectedItem = item;
+	[self setLocation: [NSString stringWithFormat:@"%d", [item tag]]];
 }
 
 - (void) updateMenuForLogoutState {
