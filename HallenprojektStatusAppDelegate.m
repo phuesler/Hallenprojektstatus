@@ -40,24 +40,28 @@
 
 }
 
+- (void)fetchingPlacesFinished:(ASIHTTPRequest *)request {
+	NSMenu *menu = [[[NSMenu alloc] initWithTitle:@"the places"] autorelease];
+	SBJSON *parser = [[SBJSON alloc] init];
+	NSString *json_string = [[NSString alloc] initWithString:[request responseString]];
+	NSArray *places = [parser objectWithString:json_string error:nil];
+	[self addItemsToMenu:menu fromDictionary:[places objectAtIndex:0]];
+	[self addItemsToMenu:menu fromDictionary:[places objectAtIndex:1]];
+	[placesMenuItem setSubmenu:menu];	
+}
+
+- (void)fetchingPlacesFailed:(ASIHTTPRequest *)request
+{
+	NSLog(@"%@",[[request error] localizedDescription]);
+}
+
 - (void) fetchPlaces {
 	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HALLENPROJEKT_SERVER,@"places.json"]];
 	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-	[request start];
-	NSError *error = [request error];
-	if (!error) {
-		NSMenu *menu = [[[NSMenu alloc] initWithTitle:@"the places"] autorelease];
-		SBJSON *parser = [[SBJSON alloc] init];
-		NSString *json_string = [[NSString alloc] initWithString:[request responseString]];
-		NSArray *places = [parser objectWithString:json_string error:nil];
-		[self addItemsToMenu:menu fromDictionary:[places objectAtIndex:0]];
-		[self addItemsToMenu:menu fromDictionary:[places objectAtIndex:1]];
-		[placesMenuItem setSubmenu:menu];
-		
-	}
-	else {
-		NSLog(@"%@",[error localizedDescription]);
-	}
+	[request setDelegate: self];
+	[request setDidFinishSelector:@selector(fetchingPlacesFinished:)];
+	[request setDidFailSelector:@selector(fetchingPlacesFailed:)];
+	[request startAsynchronous];
 }
 
 
