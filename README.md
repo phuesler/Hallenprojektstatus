@@ -1,6 +1,6 @@
 # HallenprojektStatus For OSX
 
-Super alpha status bar app for http://www.hallenprojekt.de
+Super alpha status bar app for [http://www.hallenprojekt.de](http://www.hallenprojekt.de)
 
 This is my first cocoa app, which means it is hackish and its development involved a lot of trial and error. Help is appreciated.
 
@@ -12,6 +12,8 @@ The most recent version can be found [here.](http://hallenprojekt.huesler-inform
 
 * Xcode
 * Ruby
+* rubygems
+* rake (gem install rake)
 * choctop (gem install choctop)
 
 ## Building a disk image
@@ -22,9 +24,9 @@ The most recent version can be found [here.](http://hallenprojekt.huesler-inform
 
 ## TODOS
 
-* About window with version information
+Please check [here](http://github.com/phuesler/Hallenprojektstatus/issues)
+
 * Add unit tests
-* Make requests asynchronous
 * Reconnect to server if credentials were invalid
 * Make the application background only. I couldn't figure out how to get it working
   with the preference window.
@@ -32,9 +34,4 @@ The most recent version can be found [here.](http://hallenprojekt.huesler-inform
 * Use WIFI SSID and/or core location to list the closest places first
 * Create proper http post requests with content type set to 'application/json'
 
-## Issues
-
-Please check [here](http://github.com/phuesler/Hallenprojektstatus/issues)
-
 [hallenprojekt.de]: http://www.hallenprojekt.de
-[couchdb]: http://couchdb.apache.org
