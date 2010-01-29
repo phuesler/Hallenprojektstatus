@@ -1,3 +1,5 @@
+require "osx/cocoa"
+
 class VersionHelper
   attr_accessor :info_plist_path
   attr_reader :major, :minor, :patch, :build
