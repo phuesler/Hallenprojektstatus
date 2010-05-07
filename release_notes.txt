@@ -1,6 +1,6 @@
-h1. <span>2009-12-14</span> Release 0.1.2
+h1. <span>07.05.2010</span> Release 0.2.0
 
-h2. Maintenance release
+h2. No dock icon is better than no dock icon
 
-* New icons
-* App runs requests to server in the background
+* Application lives only in the status bar
+* Now supports copy and paste in the preferences panel

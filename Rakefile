@@ -11,6 +11,13 @@ module Appcast
     ftp = FtpSync.new('ftp.huesler-informatik.ch', 'hallenprojekt@huesler-informatik.ch', passwd.chomp)
     ftp.sync(build_path, '/')
   end
+  
+  def make_dmg_symlink
+    FileUtils.chdir(build_path) do
+      system("rm #{versionless_pkg_name}")
+      `ln -s '#{pkg_name}' '#{versionless_pkg_name}'`
+    end
+  end
 end
 
 ChocTop.new do |s|
