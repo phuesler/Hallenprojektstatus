@@ -49,16 +49,16 @@
 	 
 }
 -(IBAction) loadPreferences: (id) sender {
+  [NSApp activateIgnoringOtherApps: YES];
 	[panel makeKeyAndOrderFront:self];
-	[panel makeFirstResponder:panel];
 }
 
 -(void) dealloc {
-    [panel release];
+  [panel release];
 	[passwordTextField release];
 	[usernameTextField release];
-    [username release];
-    [dataFile release];
-    [super dealloc];
+  [username release];
+  [dataFile release];
+  [super dealloc];
 }
 @end
